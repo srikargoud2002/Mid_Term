@@ -2,11 +2,14 @@ from decimal import Decimal
 from typing import Callable
 from calculator.operations import add_numbers, sub_numbers, mul_numbers, div_numbers
 from calculator.calculation import OperationRecord
+from calculator.history.history import OperationHistory
+
 
 class CalcEngine:
     @staticmethod
     def _execute_operation(x: Decimal, y: Decimal, op_func: Callable[[Decimal, Decimal], Decimal]) -> Decimal:
         record = OperationRecord.create(x, y, op_func)
+        OperationHistory.add_record(record)
         return record.execute()
 
     @staticmethod
