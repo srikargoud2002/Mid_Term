@@ -1,0 +1,223 @@
+2025-03-06 11:57:34 [INFO] app: Application initialized
+2025-03-06 11:57:34 [INFO] app: Application starting
+2025-03-06 11:57:34 [INFO] app: Starting plugin loading process
+2025-03-06 11:57:34 [DEBUG] app: Discovered plugin: Menu
+2025-03-06 11:57:34 [INFO] app: Registered command: Menu
+2025-03-06 11:57:34 [DEBUG] app: Discovered plugin: add
+2025-03-06 11:57:34 [INFO] app: Registered command: add
+2025-03-06 11:57:34 [DEBUG] app: Discovered plugin: divide
+2025-03-06 11:57:34 [INFO] app: Registered command: divide
+2025-03-06 11:57:34 [DEBUG] app: Discovered plugin: exit
+2025-03-06 11:57:34 [INFO] app: Registered command: exit
+2025-03-06 11:57:34 [DEBUG] app: Discovered plugin: history_clear
+2025-03-06 11:57:34 [INFO] app: Registered command: history_clear
+2025-03-06 11:57:34 [DEBUG] app: Discovered plugin: history_load
+2025-03-06 11:57:34 [INFO] app: Registered command: history_load
+2025-03-06 11:57:34 [DEBUG] app: Discovered plugin: history_save
+2025-03-06 11:57:34 [INFO] app: Registered command: history_save
+2025-03-06 11:57:34 [DEBUG] app: Discovered plugin: history_show
+2025-03-06 11:57:34 [INFO] app: Registered command: history_show
+2025-03-06 11:57:34 [DEBUG] app: Discovered plugin: last_op
+2025-03-06 11:57:34 [INFO] app: Registered command: last_op
+2025-03-06 11:57:34 [DEBUG] app: Discovered plugin: multiply
+2025-03-06 11:57:34 [INFO] app: Registered command: multiply
+2025-03-06 11:57:34 [DEBUG] app: Discovered plugin: subtract
+2025-03-06 11:57:34 [INFO] app: Registered command: subtract
+2025-03-06 11:57:34 [INFO] app: Starting REPL interface
+2025-03-06 11:57:42 [DEBUG] app: User input: add 3 4
+2025-03-06 11:57:42 [INFO] app: Executing command: add with args: ['3', '4']
+2025-03-06 11:57:47 [DEBUG] app: User input: multiply 3 4
+2025-03-06 11:57:47 [INFO] app: Executing command: multiply with args: ['3', '4']
+2025-03-06 11:57:56 [DEBUG] app: User input: menu
+2025-03-06 11:57:56 [WARNING] app: Unknown command attempted: menu
+2025-03-06 11:57:59 [DEBUG] app: User input: Menu
+2025-03-06 11:57:59 [INFO] app: Executing command: Menu with args: []
+2025-03-06 11:58:05 [DEBUG] app: User input: histoty_load
+2025-03-06 11:58:05 [WARNING] app: Unknown command attempted: histoty_load
+2025-03-06 11:58:13 [DEBUG] app: User input: history_load
+2025-03-06 11:58:13 [INFO] app: Executing command: history_load with args: []
+2025-03-06 11:58:49 [DEBUG] app: User input: history_show
+2025-03-06 11:58:49 [INFO] app: Executing command: history_show with args: []
+2025-03-06 11:59:18 [DEBUG] app: User input: divide  1/0
+2025-03-06 11:59:18 [INFO] app: Executing command: divide with args: ['1/0']
+2025-03-06 11:59:18 [ERROR] app: Command execution error: execute() missing 1 required positional argument: 'b_str'
+Traceback (most recent call last):
+  File "C:\GitHub\Mid_Term\app\__init__.py", line 91, in run_repl
+    command.execute(*args)
+TypeError: execute() missing 1 required positional argument: 'b_str'
+2025-03-06 11:59:30 [DEBUG] app: User input: divide 1 0
+2025-03-06 11:59:30 [INFO] app: Executing command: divide with args: ['1', '0']
+2025-03-06 12:00:51 [DEBUG] app: User input: exit
+2025-03-06 12:00:51 [INFO] app: Application shutdown
+2025-03-06 12:03:32 [INFO] app: Application initialized
+2025-03-06 12:03:32 [INFO] app: Application starting
+2025-03-06 12:03:32 [INFO] app: Starting plugin loading process
+2025-03-06 12:03:32 [DEBUG] app: Discovered plugin: Menu
+2025-03-06 12:03:32 [INFO] app: Registered command: Menu
+2025-03-06 12:03:32 [DEBUG] app: Discovered plugin: add
+2025-03-06 12:03:32 [INFO] app: Registered command: add
+2025-03-06 12:03:32 [DEBUG] app: Discovered plugin: divide
+2025-03-06 12:03:32 [INFO] app: Registered command: divide
+2025-03-06 12:03:32 [DEBUG] app: Discovered plugin: exit
+2025-03-06 12:03:32 [INFO] app: Registered command: exit
+2025-03-06 12:03:32 [DEBUG] app: Discovered plugin: history_clear
+2025-03-06 12:03:32 [INFO] app: Registered command: history_clear
+2025-03-06 12:03:32 [DEBUG] app: Discovered plugin: history_load
+2025-03-06 12:03:32 [INFO] app: Registered command: history_load
+2025-03-06 12:03:32 [DEBUG] app: Discovered plugin: history_save
+2025-03-06 12:03:32 [INFO] app: Registered command: history_save
+2025-03-06 12:03:32 [DEBUG] app: Discovered plugin: history_show
+2025-03-06 12:03:32 [INFO] app: Registered command: history_show
+2025-03-06 12:03:32 [DEBUG] app: Discovered plugin: last_op
+2025-03-06 12:03:32 [INFO] app: Registered command: last_op
+2025-03-06 12:03:32 [DEBUG] app: Discovered plugin: multiply
+2025-03-06 12:03:32 [INFO] app: Registered command: multiply
+2025-03-06 12:03:32 [DEBUG] app: Discovered plugin: subtract
+2025-03-06 12:03:32 [INFO] app: Registered command: subtract
+2025-03-06 12:03:32 [INFO] app: Starting REPL interface
+2025-03-06 12:07:05 [DEBUG] app: User input: exit
+2025-03-06 12:07:05 [INFO] app: Application shutdown
+2025-03-06 12:07:07 [INFO] app: Application initialized
+2025-03-06 12:07:07 [INFO] app: Application starting
+2025-03-06 12:07:07 [INFO] app: Starting plugin loading process
+2025-03-06 12:07:07 [INFO] app: Registered command: Menu
+2025-03-06 12:07:07 [INFO] app: Registered command: add
+2025-03-06 12:07:07 [INFO] app: Registered command: divide
+2025-03-06 12:07:07 [INFO] app: Registered command: exit
+2025-03-06 12:07:07 [INFO] app: Registered command: history_clear
+2025-03-06 12:07:07 [INFO] app: Registered command: history_load
+2025-03-06 12:07:07 [INFO] app: Registered command: history_save
+2025-03-06 12:07:07 [INFO] app: Registered command: history_show
+2025-03-06 12:07:07 [INFO] app: Registered command: last_op
+2025-03-06 12:07:07 [INFO] app: Registered command: multiply
+2025-03-06 12:07:07 [INFO] app: Registered command: subtract
+2025-03-06 12:07:07 [INFO] app: Starting REPL interface
+2025-03-06 12:07:11 [INFO] app: Executing command: add with args: ['3', '4']
+2025-03-06 12:07:26 [INFO] app: Application shutdown
+2025-03-06 12:21:21 [INFO] app: Application initialized
+2025-03-06 12:21:21 [INFO] app: Application starting
+2025-03-06 12:21:21 [INFO] app: Starting plugin loading process
+2025-03-06 12:21:21 [DEBUG] app: Discovered plugin: Menu
+2025-03-06 12:21:21 [INFO] app: Registered command: Menu
+2025-03-06 12:21:21 [DEBUG] app: Discovered plugin: add
+2025-03-06 12:21:21 [INFO] app: Registered command: add
+2025-03-06 12:21:21 [DEBUG] app: Discovered plugin: divide
+2025-03-06 12:21:21 [INFO] app: Registered command: divide
+2025-03-06 12:21:21 [DEBUG] app: Discovered plugin: exit
+2025-03-06 12:21:21 [INFO] app: Registered command: exit
+2025-03-06 12:21:21 [DEBUG] app: Discovered plugin: history_clear
+2025-03-06 12:21:21 [INFO] app: Registered command: history_clear
+2025-03-06 12:21:21 [DEBUG] app: Discovered plugin: history_load
+2025-03-06 12:21:21 [INFO] app: Registered command: history_load
+2025-03-06 12:21:21 [DEBUG] app: Discovered plugin: history_save
+2025-03-06 12:21:21 [INFO] app: Registered command: history_save
+2025-03-06 12:21:21 [DEBUG] app: Discovered plugin: history_show
+2025-03-06 12:21:21 [INFO] app: Registered command: history_show
+2025-03-06 12:21:21 [DEBUG] app: Discovered plugin: last_op
+2025-03-06 12:21:21 [INFO] app: Registered command: last_op
+2025-03-06 12:21:21 [DEBUG] app: Discovered plugin: multiply
+2025-03-06 12:21:21 [INFO] app: Registered command: multiply
+2025-03-06 12:21:21 [DEBUG] app: Discovered plugin: subtract
+2025-03-06 12:21:21 [INFO] app: Registered command: subtract
+2025-03-06 12:21:21 [INFO] app: Starting REPL interface
+2025-03-06 12:21:27 [DEBUG] app: User input: add 3 4
+2025-03-06 12:21:27 [INFO] app: Executing command: add with args: ['3', '4']
+2025-03-06 12:21:30 [DEBUG] app: User input: add 4 5
+2025-03-06 12:21:30 [INFO] app: Executing command: add with args: ['4', '5']
+2025-03-06 12:23:08 [INFO] app: Keyboard interrupt detected
+2025-03-06 12:23:08 [INFO] app: Application shutdown
+2025-03-06 12:23:10 [INFO] app: Application initialized
+2025-03-06 12:23:10 [INFO] app: Application starting
+2025-03-06 12:23:10 [INFO] app: Starting plugin loading process
+2025-03-06 12:23:10 [DEBUG] app: Discovered plugin: Menu
+2025-03-06 12:23:10 [INFO] app: Registered command: Menu
+2025-03-06 12:23:10 [DEBUG] app: Discovered plugin: add
+2025-03-06 12:23:10 [INFO] app: Registered command: add
+2025-03-06 12:23:10 [DEBUG] app: Discovered plugin: divide
+2025-03-06 12:23:10 [INFO] app: Registered command: divide
+2025-03-06 12:23:10 [DEBUG] app: Discovered plugin: exit
+2025-03-06 12:23:10 [INFO] app: Registered command: exit
+2025-03-06 12:23:10 [DEBUG] app: Discovered plugin: history_clear
+2025-03-06 12:23:10 [INFO] app: Registered command: history_clear
+2025-03-06 12:23:10 [DEBUG] app: Discovered plugin: history_load
+2025-03-06 12:23:10 [INFO] app: Registered command: history_load
+2025-03-06 12:23:10 [DEBUG] app: Discovered plugin: history_save
+2025-03-06 12:23:10 [INFO] app: Registered command: history_save
+2025-03-06 12:23:10 [DEBUG] app: Discovered plugin: history_show
+2025-03-06 12:23:10 [INFO] app: Registered command: history_show
+2025-03-06 12:23:10 [DEBUG] app: Discovered plugin: last_op
+2025-03-06 12:23:10 [INFO] app: Registered command: last_op
+2025-03-06 12:23:10 [DEBUG] app: Discovered plugin: multiply
+2025-03-06 12:23:10 [INFO] app: Registered command: multiply
+2025-03-06 12:23:10 [DEBUG] app: Discovered plugin: subtract
+2025-03-06 12:23:10 [INFO] app: Registered command: subtract
+2025-03-06 12:23:10 [INFO] app: Starting REPL interface
+2025-03-06 12:23:13 [DEBUG] app: User input: add 3 4
+2025-03-06 12:23:13 [INFO] app: Executing command: add with args: ['3', '4']
+2025-03-06 12:23:20 [DEBUG] app: User input: history_save
+2025-03-06 12:23:20 [INFO] app: Executing command: history_save with args: []
+2025-03-06 12:23:47 [DEBUG] app: User input: history_load
+2025-03-06 12:23:47 [INFO] app: Executing command: history_load with args: []
+2025-03-06 12:23:56 [DEBUG] app: User input: add 3 4
+2025-03-06 12:23:56 [INFO] app: Executing command: add with args: ['3', '4']
+2025-03-06 12:23:59 [DEBUG] app: User input: add 5 6
+2025-03-06 12:23:59 [INFO] app: Executing command: add with args: ['5', '6']
+2025-03-06 12:24:07 [DEBUG] app: User input: history_save
+2025-03-06 12:24:07 [INFO] app: Executing command: history_save with args: []
+2025-03-06 12:24:13 [DEBUG] app: User input: history_load
+2025-03-06 12:24:13 [INFO] app: Executing command: history_load with args: []
+2025-03-06 12:34:47 [INFO] app: Keyboard interrupt detected
+2025-03-06 12:34:47 [INFO] app: Application shutdown
+2025-03-06 12:34:49 [INFO] app: Application initialized
+2025-03-06 12:34:49 [INFO] app: Application starting
+2025-03-06 12:34:49 [INFO] app: Starting plugin loading process
+2025-03-06 12:34:49 [DEBUG] app: Discovered plugin: Menu
+2025-03-06 12:34:49 [INFO] app: Registered command: Menu
+2025-03-06 12:34:49 [DEBUG] app: Discovered plugin: add
+2025-03-06 12:34:49 [INFO] app: Registered command: add
+2025-03-06 12:34:49 [DEBUG] app: Discovered plugin: divide
+2025-03-06 12:34:49 [INFO] app: Registered command: divide
+2025-03-06 12:34:49 [DEBUG] app: Discovered plugin: exit
+2025-03-06 12:34:49 [INFO] app: Registered command: exit
+2025-03-06 12:34:50 [DEBUG] app: Discovered plugin: history_clear
+2025-03-06 12:34:50 [INFO] app: Registered command: history_clear
+2025-03-06 12:34:50 [DEBUG] app: Discovered plugin: history_load
+2025-03-06 12:34:50 [INFO] app: Registered command: history_load
+2025-03-06 12:34:50 [DEBUG] app: Discovered plugin: history_save
+2025-03-06 12:34:50 [INFO] app: Registered command: history_save
+2025-03-06 12:34:50 [DEBUG] app: Discovered plugin: history_show
+2025-03-06 12:34:50 [INFO] app: Registered command: history_show
+2025-03-06 12:34:50 [DEBUG] app: Discovered plugin: last_op
+2025-03-06 12:34:50 [INFO] app: Registered command: last_op
+2025-03-06 12:34:50 [DEBUG] app: Discovered plugin: multiply
+2025-03-06 12:34:50 [INFO] app: Registered command: multiply
+2025-03-06 12:34:50 [DEBUG] app: Discovered plugin: subtract
+2025-03-06 12:34:50 [INFO] app: Registered command: subtract
+2025-03-06 12:34:50 [INFO] app: Starting REPL interface
+2025-03-06 12:34:52 [DEBUG] app: User input: add 3 4
+2025-03-06 12:34:52 [INFO] app: Executing command: add with args: ['3', '4']
+2025-03-06 12:34:53 [DEBUG] app: User input: add 4 5
+2025-03-06 12:34:53 [INFO] app: Executing command: add with args: ['4', '5']
+2025-03-06 12:35:04 [DEBUG] app: User input: save_history
+2025-03-06 12:35:04 [WARNING] app: Unknown command attempted: save_history
+2025-03-06 12:35:09 [DEBUG] app: User input: history_save
+2025-03-06 12:35:09 [INFO] app: Executing command: history_save with args: []
+2025-03-06 12:35:09 [DEBUG] app.plugins.history_facade: Using history directory: calculator_history
+2025-03-06 12:35:09 [INFO] app.plugins.history_facade: Created history directory at C:\GitHub\Mid_Term\calculator_history
+2025-03-06 12:35:09 [INFO] app.plugins.history_facade: Saving 2 records to calculator_history\calculator_history_20250306_123509.csv
+2025-03-06 12:35:09 [DEBUG] app.plugins.history_facade: CSV file created successfully at calculator_history\calculator_history_20250306_123509.csv
+2025-03-06 12:35:27 [DEBUG] app: User input: history_load
+2025-03-06 12:35:27 [INFO] app: Executing command: history_load with args: []
+2025-03-06 12:35:27 [DEBUG] app.plugins.history_facade: Using history directory: calculator_history
+2025-03-06 12:35:27 [INFO] app.plugins.history_facade: Created history directory at C:\GitHub\Mid_Term\calculator_history
+2025-03-06 12:35:27 [DEBUG] app.plugins.history_facade: Found 3 CSV files in history directory
+2025-03-06 12:35:30 [INFO] app.plugins.history_facade: Attempting to load history from calculator_history_20250306_122320.csv
+2025-03-06 12:35:30 [DEBUG] app.plugins.history_facade: Using history directory: calculator_history
+2025-03-06 12:35:30 [INFO] app.plugins.history_facade: Created history directory at C:\GitHub\Mid_Term\calculator_history
+2025-03-06 12:35:30 [INFO] app.plugins.history_facade: Cleared existing history before import
+2025-03-06 12:35:30 [DEBUG] app.plugins.history_facade: Formatting calculation history
+2025-03-06 12:35:30 [INFO] app.plugins.history_facade: Successfully loaded 1 records from calculator_history_20250306_122320.csv
+2025-03-06 12:35:39 [DEBUG] app: User input: clear
+2025-03-06 12:35:39 [WARNING] app: Unknown command attempted: clear
+2025-03-06 12:35:42 [DEBUG] app: User input: exit
+2025-03-06 12:35:42 [INFO] app: Application shutdown
