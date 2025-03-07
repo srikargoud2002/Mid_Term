@@ -6,32 +6,62 @@ import pkgutil
 from typing import Dict
 from dotenv import load_dotenv
 from app.commands import Command, CommandHandler
-from logging_custom.logging_config import LoggingConfig
-
+import logging
+import logging.config
+import sys
 class App:
     """Main application class handling initialization, 
         plugin loading, and REPL execution."""
-    def __init__(self):
+    def __init__(self, start_repl=True):
         """Initialize application components and environment."""
+        self.load_environment()        
+        self.setup_logging()        
         self.logger = logging.getLogger(__name__)
-        LoggingConfig()
         self.logger.info("Application is Starting")
         self.command_handler = CommandHandler()
-        self.load_environment()
         self.load_plugins()
         self.logger.info("Application initialized")
-        self.run_repl()
+        if start_repl:
+            self.run_repl()
+        
+
+    def setup_logging(self):
+        """Configure logging using environment variables."""
+        log_level = self.settings.get('LOG_LEVEL', 'INFO').upper()
+        log_output = self.settings.get('LOG_OUTPUT', './logs/app.log')
+
+        # Ensure the log directory exists
+        log_directory = os.path.dirname(log_output)
+        os.makedirs(log_directory, exist_ok=True)
+
+        numeric_level = getattr(logging, log_level, logging.INFO)
+
+        logging.basicConfig(
+            level=numeric_level,
+            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.handlers.RotatingFileHandler(
+                    filename=log_output,
+                    maxBytes=1048576,
+                    backupCount=5
+                )
+            ]
+        )
+
+        # Test logger to confirm configuration loaded successfully
+        test_logger = logging.getLogger("setup_test")
+        test_logger.info("Logging configured successfully with level %s at %s", log_level, log_output)
 
     def load_environment(self):
         """Load environment variables from .env file."""
         try:
             load_dotenv()
             self.settings = dict(os.environ)
-            environment = self.get_environment_variable()
-            self.logger.info("Environment variables loaded successfully")
-            self.logger.debug("Current environment: %s", environment)
-        except Exception:
-            self.logger.critical("Failed to load environment variables", exc_info=True)
+            environment = self.get_environment_variable('ENVIRONMENT')  # Specify parameter
+            print("Environment variables loaded successfully")
+            print(f"Current environment: {environment}")
+        except Exception as e:
+            print(f"Failed to load environment variables: {str(e)}")
             raise
 
     def get_environment_variable(self, env_var: str = 'ENVIRONMENT'):
@@ -96,8 +126,8 @@ class App:
                     self.logger.debug("User input: %s", user_input)
 
                     if user_input.lower() == "exit":
-                        self.command_handler.execute_command("exit")
                         self.logger.info("Exit command received")
+                        self.command_handler.execute_command("exit")
                         break
 
                     self._execute_command(user_input)

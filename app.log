@@ -1,0 +1,15 @@
+2025-03-07 14:07:53,873 - app - INFO - Application is Starting
+2025-03-07 14:07:53,874 - app - INFO - Starting plugin loading process
+2025-03-07 14:07:53,882 - app - INFO - Registered command: add
+2025-03-07 14:07:53,883 - app - INFO - Registered command: divide
+2025-03-07 14:07:53,884 - app - INFO - Registered command: exit
+2025-03-07 14:07:54,118 - app - INFO - Registered command: history_clear
+2025-03-07 14:07:54,120 - app - INFO - Registered command: history_load
+2025-03-07 14:07:54,121 - app - INFO - Registered command: history_save
+2025-03-07 14:07:54,122 - app - INFO - Registered command: history_show
+2025-03-07 14:07:54,123 - app - INFO - Registered command: last_op
+2025-03-07 14:07:54,123 - app - INFO - Registered command: menu
+2025-03-07 14:07:54,124 - app - INFO - Registered command: multiply
+2025-03-07 14:07:54,125 - app - INFO - Registered command: subtract
+2025-03-07 14:07:54,125 - app - INFO - Application initialized
+2025-03-07 14:07:54,125 - app - INFO - Starting REPL interface

@@ -1,63 +1,51 @@
-2025-03-06 23:46:09 [INFO] app: Application is Starting
-2025-03-06 23:46:09 [INFO] app: Environment variables loaded successfully
-2025-03-06 23:46:09 [DEBUG] app: Current environment: developer
-2025-03-06 23:46:09 [INFO] app: Starting plugin loading process
-2025-03-06 23:46:09 [INFO] app: Registered command: add
-2025-03-06 23:46:09 [INFO] app: Registered command: divide
-2025-03-06 23:46:09 [INFO] app: Registered command: exit
-2025-03-06 23:46:09 [INFO] app: Registered command: history_clear
-2025-03-06 23:46:09 [INFO] app: Registered command: history_load
-2025-03-06 23:46:09 [INFO] app: Registered command: history_save
-2025-03-06 23:46:09 [INFO] app: Registered command: history_show
-2025-03-06 23:46:09 [INFO] app: Registered command: last_op
-2025-03-06 23:46:09 [INFO] app: Registered command: menu
-2025-03-06 23:46:09 [INFO] app: Registered command: multiply
-2025-03-06 23:46:09 [INFO] app: Registered command: subtract
-2025-03-06 23:46:09 [INFO] app: Application initialized
-2025-03-06 23:46:09 [INFO] app: Starting REPL interface
-2025-03-06 23:46:35 [DEBUG] app: User input: exit
-2025-03-07 00:01:08 [INFO] app: Application is Starting
-2025-03-07 00:01:08 [INFO] app: Environment variables loaded successfully
-2025-03-07 00:01:08 [DEBUG] app: Current environment: developer
-2025-03-07 00:01:08 [INFO] app: Starting plugin loading process
-2025-03-07 00:01:08 [INFO] app: Registered command: add
-2025-03-07 00:01:08 [INFO] app: Registered command: divide
-2025-03-07 00:01:08 [INFO] app: Registered command: exit
-2025-03-07 00:01:08 [INFO] app: Registered command: history_clear
-2025-03-07 00:01:08 [INFO] app: Registered command: history_load
-2025-03-07 00:01:08 [INFO] app: Registered command: history_save
-2025-03-07 00:01:08 [INFO] app: Registered command: history_show
-2025-03-07 00:01:08 [INFO] app: Registered command: last_op
-2025-03-07 00:01:08 [INFO] app: Registered command: menu
-2025-03-07 00:01:08 [INFO] app: Registered command: multiply
-2025-03-07 00:01:08 [INFO] app: Registered command: subtract
-2025-03-07 00:01:08 [INFO] app: Application initialized
-2025-03-07 00:01:08 [INFO] app: Starting REPL interface
-2025-03-07 00:01:12 [DEBUG] app: User input: add 3 0
-2025-03-07 00:01:12 [INFO] app: Executing command: add with args: ['3', '0']
-2025-03-07 00:01:21 [DEBUG] app: User input: divide 4 0
-2025-03-07 00:01:21 [INFO] app: Executing command: divide with args: ['4', '0']
-2025-03-07 00:01:30 [DEBUG] app: User input: divide a 2
-2025-03-07 00:01:30 [INFO] app: Executing command: divide with args: ['a', '2']
-2025-03-07 00:01:35 [DEBUG] app: User input: add 2 a
-2025-03-07 00:01:35 [INFO] app: Executing command: add with args: ['2', 'a']
-2025-03-07 00:01:42 [DEBUG] app: User input: subtract 2 1
-2025-03-07 00:01:42 [INFO] app: Executing command: subtract with args: ['2', '1']
-2025-03-07 00:01:46 [DEBUG] app: User input: subtract 1 a
-2025-03-07 00:01:46 [INFO] app: Executing command: subtract with args: ['1', 'a']
-2025-03-07 00:02:17 [DEBUG] app: User input: multiply a 1
-2025-03-07 00:02:17 [INFO] app: Executing command: multiply with args: ['a', '1']
-2025-03-07 00:02:40 [DEBUG] app: User input: menu
-2025-03-07 00:02:40 [INFO] app: Executing command: menu with args: []
-2025-03-07 00:02:52 [DEBUG] app: User input: last_op
-2025-03-07 00:02:52 [INFO] app: Executing command: last_op with args: []
-2025-03-07 00:02:52 [DEBUG] app.plugins.history_facade: Retrieving last formatted operation
-2025-03-07 00:03:05 [DEBUG] app: User input: history_show
-2025-03-07 00:03:05 [INFO] app: Executing command: history_show with args: []
-2025-03-07 00:03:05 [DEBUG] app.plugins.history_facade: Formatting calculation history
-2025-03-07 00:03:05 [ERROR] app: Command execution error: Cannot divide by zero
+2025-03-07 14:29:16,407 - setup_test - INFO - Logging configured successfully with level DEBUG at ./logs/app.log
+2025-03-07 14:29:16,407 - app - INFO - Application is Starting
+2025-03-07 14:29:16,407 - app - INFO - Starting plugin loading process
+2025-03-07 14:29:16,416 - app - INFO - Registered command: add
+2025-03-07 14:29:16,416 - app - INFO - Registered command: divide
+2025-03-07 14:29:16,417 - app - INFO - Registered command: exit
+2025-03-07 14:29:16,679 - app - INFO - Registered command: history_clear
+2025-03-07 14:29:16,680 - app - INFO - Registered command: history_load
+2025-03-07 14:29:16,680 - app - INFO - Registered command: history_save
+2025-03-07 14:29:16,681 - app - INFO - Registered command: history_show
+2025-03-07 14:29:16,682 - app - INFO - Registered command: last_op
+2025-03-07 14:29:16,682 - app - INFO - Registered command: menu
+2025-03-07 14:29:16,683 - app - INFO - Registered command: multiply
+2025-03-07 14:29:16,683 - app - INFO - Registered command: subtract
+2025-03-07 14:29:16,684 - app - INFO - Application initialized
+2025-03-07 14:29:16,684 - app - INFO - Starting REPL interface
+2025-03-07 14:29:23,203 - app - DEBUG - User input: add 3 3
+2025-03-07 14:29:23,204 - app - INFO - Executing command: add with args: ['3', '3']
+2025-03-07 14:29:28,477 - app - DEBUG - User input: subtract 1 2
+2025-03-07 14:29:28,477 - app - INFO - Executing command: subtract with args: ['1', '2']
+2025-03-07 14:29:38,902 - app - DEBUG - User input: divide 1 0
+2025-03-07 14:29:38,903 - app - INFO - Executing command: divide with args: ['1', '0']
+2025-03-07 14:30:02,453 - app - DEBUG - User input: history_save
+2025-03-07 14:30:02,453 - app - INFO - Executing command: history_save with args: []
+2025-03-07 14:30:02,453 - app.plugins.history_facade - DEBUG - Using history directory: calculator_history
+2025-03-07 14:30:02,454 - app.plugins.history_facade - INFO - Created history directory at C:\GitHub\Mid_Term\calculator_history
+2025-03-07 14:30:02,455 - app.plugins.history_facade - INFO - Saving 3 records to calculator_history\calculator_history_20250307_143002.csv
+2025-03-07 14:30:02,455 - app - ERROR - Command execution error: Cannot divide by zero
 Traceback (most recent call last):
-  File "C:\GitHub\Mid_Term\app\__init__.py", line 124, in _execute_command
+  File "C:\GitHub\Mid_Term\app\__init__.py", line 152, in _execute_command
+    command.execute(*args) if args else command.execute()
+  File "C:\GitHub\Mid_Term\app\plugins\history_save\__init__.py", line 8, in execute
+    result = HistoryFacade.save_to_csv()
+  File "C:\GitHub\Mid_Term\app\plugins\history_facade.py", line 71, in save_to_csv
+    df = pd.DataFrame([{
+  File "C:\GitHub\Mid_Term\app\plugins\history_facade.py", line 75, in <listcomp>
+    'result': str(r.execute())
+  File "C:\GitHub\Mid_Term\calculator\calculation.py", line 25, in execute
+    return self.operation(self.x, self.y)
+  File "C:\GitHub\Mid_Term\calculator\operations.py", line 25, in div_numbers
+    raise ValueError("Cannot divide by zero")
+ValueError: Cannot divide by zero
+2025-03-07 14:30:33,144 - app - DEBUG - User input: history_show
+2025-03-07 14:30:33,144 - app - INFO - Executing command: history_show with args: []
+2025-03-07 14:30:33,144 - app.plugins.history_facade - DEBUG - Formatting calculation history
+2025-03-07 14:30:33,145 - app - ERROR - Command execution error: Cannot divide by zero
+Traceback (most recent call last):
+  File "C:\GitHub\Mid_Term\app\__init__.py", line 152, in _execute_command
     command.execute(*args) if args else command.execute()
   File "C:\GitHub\Mid_Term\app\plugins\history_show\__init__.py", line 8, in execute
     entries = HistoryFacade.get_formatted_history()
@@ -70,130 +58,29 @@ Traceback (most recent call last):
   File "C:\GitHub\Mid_Term\calculator\operations.py", line 25, in div_numbers
     raise ValueError("Cannot divide by zero")
 ValueError: Cannot divide by zero
-2025-03-07 00:03:21 [DEBUG] app: User input: history_save
-2025-03-07 00:03:21 [INFO] app: Executing command: history_save with args: []
-2025-03-07 00:03:21 [DEBUG] app.plugins.history_facade: Using history directory: calculator_history
-2025-03-07 00:03:21 [INFO] app.plugins.history_facade: Created history directory at C:\GitHub\Mid_Term\calculator_history
-2025-03-07 00:03:21 [INFO] app.plugins.history_facade: Saving 3 records to calculator_history\calculator_history_20250307_000321.csv
-2025-03-07 00:03:21 [ERROR] app: Command execution error: Cannot divide by zero
-Traceback (most recent call last):
-  File "C:\GitHub\Mid_Term\app\__init__.py", line 124, in _execute_command
-    command.execute(*args) if args else command.execute()
-  File "C:\GitHub\Mid_Term\app\plugins\history_save\__init__.py", line 8, in execute
-    result = HistoryFacade.save_to_csv()
-  File "C:\GitHub\Mid_Term\app\plugins\history_facade.py", line 71, in save_to_csv
-    df = pd.DataFrame([{
-  File "C:\GitHub\Mid_Term\app\plugins\history_facade.py", line 75, in <listcomp>
-    'result': str(r.execute())
-  File "C:\GitHub\Mid_Term\calculator\calculation.py", line 25, in execute
-    return self.operation(self.x, self.y)
-  File "C:\GitHub\Mid_Term\calculator\operations.py", line 25, in div_numbers
-    raise ValueError("Cannot divide by zero")
-ValueError: Cannot divide by zero
-2025-03-07 00:03:31 [DEBUG] app: User input: history_save
-2025-03-07 00:03:31 [INFO] app: Executing command: history_save with args: []
-2025-03-07 00:03:31 [DEBUG] app.plugins.history_facade: Using history directory: calculator_history
-2025-03-07 00:03:31 [INFO] app.plugins.history_facade: Created history directory at C:\GitHub\Mid_Term\calculator_history
-2025-03-07 00:03:31 [INFO] app.plugins.history_facade: Saving 3 records to calculator_history\calculator_history_20250307_000331.csv
-2025-03-07 00:03:31 [ERROR] app: Command execution error: Cannot divide by zero
-Traceback (most recent call last):
-  File "C:\GitHub\Mid_Term\app\__init__.py", line 124, in _execute_command
-    command.execute(*args) if args else command.execute()
-  File "C:\GitHub\Mid_Term\app\plugins\history_save\__init__.py", line 8, in execute
-    result = HistoryFacade.save_to_csv()
-  File "C:\GitHub\Mid_Term\app\plugins\history_facade.py", line 71, in save_to_csv
-    df = pd.DataFrame([{
-  File "C:\GitHub\Mid_Term\app\plugins\history_facade.py", line 75, in <listcomp>
-    'result': str(r.execute())
-  File "C:\GitHub\Mid_Term\calculator\calculation.py", line 25, in execute
-    return self.operation(self.x, self.y)
-  File "C:\GitHub\Mid_Term\calculator\operations.py", line 25, in div_numbers
-    raise ValueError("Cannot divide by zero")
-ValueError: Cannot divide by zero
-2025-03-07 00:03:42 [DEBUG] app: User input: history_clear
-2025-03-07 00:03:42 [INFO] app: Executing command: history_clear with args: []
-2025-03-07 00:03:42 [INFO] app.plugins.history_facade: Clearing operation history
-2025-03-07 00:03:48 [DEBUG] app: User input: history_save
-2025-03-07 00:03:48 [INFO] app: Executing command: history_save with args: []
-2025-03-07 00:03:48 [DEBUG] app.plugins.history_facade: Using history directory: calculator_history
-2025-03-07 00:03:48 [INFO] app.plugins.history_facade: Created history directory at C:\GitHub\Mid_Term\calculator_history
-2025-03-07 00:03:48 [WARNING] app.plugins.history_facade: Attempted to save empty history
-2025-03-07 00:03:55 [DEBUG] app: User input: history_load
-2025-03-07 00:03:55 [INFO] app: Executing command: history_load with args: []
-2025-03-07 00:03:55 [DEBUG] app.plugins.history_facade: Using history directory: calculator_history
-2025-03-07 00:03:55 [INFO] app.plugins.history_facade: Created history directory at C:\GitHub\Mid_Term\calculator_history
-2025-03-07 00:03:55 [DEBUG] app.plugins.history_facade: Found 0 CSV files in history directory
-2025-03-07 00:04:03 [DEBUG] app: User input: add 4 3
-2025-03-07 00:04:03 [INFO] app: Executing command: add with args: ['4', '3']
-2025-03-07 00:04:05 [DEBUG] app: User input: add 12 1
-2025-03-07 00:04:05 [INFO] app: Executing command: add with args: ['12', '1']
-2025-03-07 00:04:16 [DEBUG] app: User input: history_save
-2025-03-07 00:04:16 [INFO] app: Executing command: history_save with args: []
-2025-03-07 00:04:16 [DEBUG] app.plugins.history_facade: Using history directory: calculator_history
-2025-03-07 00:04:16 [INFO] app.plugins.history_facade: Created history directory at C:\GitHub\Mid_Term\calculator_history
-2025-03-07 00:04:16 [INFO] app.plugins.history_facade: Saving 2 records to calculator_history\calculator_history_20250307_000416.csv
-2025-03-07 00:04:16 [DEBUG] app.plugins.history_facade: CSV file created successfully at calculator_history\calculator_history_20250307_000416.csv
-2025-03-07 00:04:22 [DEBUG] app: User input: history_load
-2025-03-07 00:04:22 [INFO] app: Executing command: history_load with args: []
-2025-03-07 00:04:22 [DEBUG] app.plugins.history_facade: Using history directory: calculator_history
-2025-03-07 00:04:22 [INFO] app.plugins.history_facade: Created history directory at C:\GitHub\Mid_Term\calculator_history
-2025-03-07 00:04:22 [DEBUG] app.plugins.history_facade: Found 1 CSV files in history directory
-2025-03-07 00:04:23 [INFO] app.plugins.history_facade: Attempting to load history from calculator_history_20250307_000416.csv
-2025-03-07 00:04:23 [DEBUG] app.plugins.history_facade: Using history directory: calculator_history
-2025-03-07 00:04:23 [INFO] app.plugins.history_facade: Created history directory at C:\GitHub\Mid_Term\calculator_history
-2025-03-07 00:04:23 [INFO] app.plugins.history_facade: Cleared existing history before import
-2025-03-07 00:04:23 [DEBUG] app.plugins.history_facade: Formatting calculation history
-2025-03-07 00:04:23 [INFO] app.plugins.history_facade: Successfully loaded 2 records from calculator_history_20250307_000416.csv
-2025-03-07 00:04:31 [DEBUG] app: User input: add a 1
-2025-03-07 00:04:31 [INFO] app: Executing command: add with args: ['a', '1']
-2025-03-07 00:04:35 [DEBUG] app: User input: history_show
-2025-03-07 00:04:35 [INFO] app: Executing command: history_show with args: []
-2025-03-07 00:04:35 [DEBUG] app.plugins.history_facade: Formatting calculation history
-2025-03-07 00:04:41 [DEBUG] app: User input: last_op
-2025-03-07 00:04:41 [INFO] app: Executing command: last_op with args: []
-2025-03-07 00:04:41 [DEBUG] app.plugins.history_facade: Retrieving last formatted operation
-2025-03-07 00:04:51 [DEBUG] app: User input: history_save
-2025-03-07 00:04:51 [INFO] app: Executing command: history_save with args: []
-2025-03-07 00:04:51 [DEBUG] app.plugins.history_facade: Using history directory: calculator_history
-2025-03-07 00:04:51 [INFO] app.plugins.history_facade: Created history directory at C:\GitHub\Mid_Term\calculator_history
-2025-03-07 00:04:51 [INFO] app.plugins.history_facade: Saving 2 records to calculator_history\calculator_history_20250307_000451.csv
-2025-03-07 00:04:51 [DEBUG] app.plugins.history_facade: CSV file created successfully at calculator_history\calculator_history_20250307_000451.csv
-2025-03-07 00:04:59 [DEBUG] app: User input: clear
-2025-03-07 00:04:59 [WARNING] app: Unknown command attempted: clear
-2025-03-07 00:05:03 [DEBUG] app: User input: exit
-2025-03-07 00:12:28 [INFO] app: Application is Starting
-2025-03-07 00:12:28 [INFO] app: Environment variables loaded successfully
-2025-03-07 00:12:28 [DEBUG] app: Current environment: developer
-2025-03-07 00:12:28 [INFO] app: Starting plugin loading process
-2025-03-07 00:12:28 [INFO] app: Registered command: add
-2025-03-07 00:12:28 [INFO] app: Registered command: divide
-2025-03-07 00:12:28 [INFO] app: Registered command: exit
-2025-03-07 00:12:28 [INFO] app: Registered command: history_clear
-2025-03-07 00:12:28 [INFO] app: Registered command: history_load
-2025-03-07 00:12:28 [INFO] app: Registered command: history_save
-2025-03-07 00:12:28 [INFO] app: Registered command: history_show
-2025-03-07 00:12:28 [INFO] app: Registered command: last_op
-2025-03-07 00:12:28 [INFO] app: Registered command: menu
-2025-03-07 00:12:28 [INFO] app: Registered command: multiply
-2025-03-07 00:12:28 [INFO] app: Registered command: subtract
-2025-03-07 00:12:28 [INFO] app: Application initialized
-2025-03-07 00:12:28 [INFO] app: Starting REPL interface
-2025-03-07 00:12:30 [INFO] app: Keyboard interrupt detected
-2025-03-07 00:12:34 [INFO] app: Application is Starting
-2025-03-07 00:12:34 [INFO] app: Environment variables loaded successfully
-2025-03-07 00:12:34 [DEBUG] app: Current environment: developer
-2025-03-07 00:12:34 [INFO] app: Starting plugin loading process
-2025-03-07 00:12:34 [INFO] app: Registered command: add
-2025-03-07 00:12:34 [INFO] app: Registered command: divide
-2025-03-07 00:12:34 [INFO] app: Registered command: exit
-2025-03-07 00:12:34 [INFO] app: Registered command: history_clear
-2025-03-07 00:12:34 [INFO] app: Registered command: history_load
-2025-03-07 00:12:34 [INFO] app: Registered command: history_save
-2025-03-07 00:12:34 [INFO] app: Registered command: history_show
-2025-03-07 00:12:34 [INFO] app: Registered command: last_op
-2025-03-07 00:12:34 [INFO] app: Registered command: menu
-2025-03-07 00:12:34 [INFO] app: Registered command: multiply
-2025-03-07 00:12:34 [INFO] app: Registered command: subtract
-2025-03-07 00:12:34 [INFO] app: Application initialized
-2025-03-07 00:12:34 [INFO] app: Starting REPL interface
-2025-03-07 00:12:35 [INFO] app: Keyboard interrupt detected
+2025-03-07 14:30:46,139 - app - DEBUG - User input: history_clear
+2025-03-07 14:30:46,140 - app - INFO - Executing command: history_clear with args: []
+2025-03-07 14:30:46,141 - app.plugins.history_facade - INFO - Clearing operation history
+2025-03-07 14:30:53,730 - app - DEBUG - User input: history_load
+2025-03-07 14:30:53,730 - app - INFO - Executing command: history_load with args: []
+2025-03-07 14:30:53,731 - app.plugins.history_facade - DEBUG - Using history directory: calculator_history
+2025-03-07 14:30:53,731 - app.plugins.history_facade - INFO - Created history directory at C:\GitHub\Mid_Term\calculator_history
+2025-03-07 14:30:53,732 - app.plugins.history_facade - DEBUG - Found 0 CSV files in history directory
+2025-03-07 14:31:35,585 - app - DEBUG - User input: exit
+2025-03-07 15:30:07,840 - setup_test - INFO - Logging configured successfully with level DEBUG at ./logs/app.log
+2025-03-07 15:30:07,840 - app - INFO - Application is Starting
+2025-03-07 15:30:07,840 - app - INFO - Starting plugin loading process
+2025-03-07 15:30:07,847 - app - INFO - Registered command: add
+2025-03-07 15:30:07,847 - app - INFO - Registered command: divide
+2025-03-07 15:30:07,848 - app - INFO - Registered command: exit
+2025-03-07 15:30:08,106 - app - INFO - Registered command: history_clear
+2025-03-07 15:30:08,107 - app - INFO - Registered command: history_load
+2025-03-07 15:30:08,108 - app - INFO - Registered command: history_save
+2025-03-07 15:30:08,109 - app - INFO - Registered command: history_show
+2025-03-07 15:30:08,109 - app - INFO - Registered command: last_op
+2025-03-07 15:30:08,110 - app - INFO - Registered command: menu
+2025-03-07 15:30:08,110 - app - INFO - Registered command: multiply
+2025-03-07 15:30:08,111 - app - INFO - Registered command: subtract
+2025-03-07 15:30:08,111 - app - INFO - Application initialized
+2025-03-07 15:30:08,111 - app - INFO - Starting REPL interface
+2025-03-07 15:30:09,983 - app - INFO - Keyboard interrupt detected

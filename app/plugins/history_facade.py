@@ -11,10 +11,10 @@ from dotenv import load_dotenv
 from calculator.calculation import OperationRecord
 from calculator.history.history import OperationHistory
 from calculator.operations import add_numbers, div_numbers, mul_numbers, sub_numbers
-from logging_custom.logging_config import LoggingConfig
+import logging
+import logging.config
 
 load_dotenv()
-LoggingConfig()
 logger = logging.getLogger(__name__)
 
 
