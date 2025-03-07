@@ -1,3 +1,9 @@
+"""
+Logging configuration module.
+
+This module provides a singleton-based logging configuration setup using 
+environment variables for customization.
+"""
 import logging
 import logging.config
 import os
@@ -6,15 +12,20 @@ import sys
 from dotenv import load_dotenv
 
 class LoggingConfig:
+    """
+    Singleton class for configuring application-wide logging settings.
+    """
     _instance = None
 
     def __new__(cls):
+        """Ensures only one instance of LoggingConfig exists."""
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls._instance.configure_logging()
         return cls._instance
 
     def configure_logging(self):
+        """Configures the logging settings based on environment variables."""
         load_dotenv()
         log_level = os.getenv('LOG_LEVEL', 'INFO').upper()
         log_output = os.getenv('LOG_OUTPUT', 'console')
@@ -55,18 +66,18 @@ class LoggingConfig:
             config['loggers']['app']['handlers'] = ['console']
             config['handlers']['console']['level'] = log_level
         else:
-            # Create directory structure if needed
+            # Ensure log directory exists before setting up file logging
             log_path = Path(log_output)
             try:
                 log_path.parent.mkdir(parents=True, exist_ok=True)
-                config['handlers']['file']['filename'] = str(log_path)
-                config['handlers']['file']['level'] = log_level
-                config['loggers']['app']['handlers'] = ['file']
-            except PermissionError as pe:
-                sys.stderr.write(f"Permission denied creating log file: {pe}\n")
+                config["handlers"]["file"]["filename"] = str(log_path)
+                config["handlers"]["file"]["level"] = log_level
+                config["loggers"]["app"]["handlers"] = ["file"]
+            except PermissionError:
+                sys.stderr.write("Error: Permission denied while creating the log file.\n")
                 sys.exit(1)
-            except Exception as e:
-                sys.stderr.write(f"Error configuring file logging: {e}\n")
+            except OSError as error:
+                sys.stderr.write(f"Error configuring file logging: {error}\n")
                 sys.exit(1)
 
         logging.config.dictConfig(config)

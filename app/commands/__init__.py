@@ -1,15 +1,18 @@
+"""Commands"""
 from abc import ABC, abstractmethod
 
-class Command(ABC):
+class Command(ABC): # pylint: disable=too-few-public-methods
+    """Abstract Class"""
     @abstractmethod
     def execute(self):
-        pass
-
+        """Pass"""        
 class CommandHandler:
+    """Handler"""
     def __init__(self):
         self.commands = {}
 
     def register_command(self, command_name: str, command: Command):
+        """Registration of Commands"""
         self.commands[command_name] = command
 
     def execute_command(self, command_name: str):
@@ -19,9 +22,7 @@ class CommandHandler:
         else:
             print(f"No such command: {command_name}")
         """
-        """Easier to ask for forgiveness than permission (EAFP) - Use when its going to most likely work"""
         try:
             self.commands[command_name].execute()
         except KeyError:
             print(f"No such command: {command_name}")
-

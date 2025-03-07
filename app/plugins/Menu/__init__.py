@@ -1,7 +1,9 @@
+"""Plugin For Menu"""
 from app.commands import Command
 
 
-class MenuCommand(Command):
+class MenuCommand(Command): # pylint: disable=too-few-public-methods
+    """Menu Command"""
     def __init__(self, command_handler):
         self.command_handler = command_handler
     def execute(self):

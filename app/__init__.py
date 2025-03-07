@@ -1,119 +1,131 @@
-import os
-from app.commands import CommandHandler
-from dotenv import load_dotenv
+"""Main application module for calculator REPL interface."""
 import importlib
-from app.commands import Command
-import pkgutil
-from logging_custom.logging_config import LoggingConfig
 import logging
+import os
+import pkgutil
+from typing import Dict
+from dotenv import load_dotenv
+from app.commands import Command, CommandHandler
+from logging_custom.logging_config import LoggingConfig
 
 class App:
+    """Main application class handling initialization, 
+        plugin loading, and REPL execution."""
     def __init__(self):
+        """Initialize application components and environment."""
         self.logger = logging.getLogger(__name__)
+        LoggingConfig()
+        self.logger.info("Application is Starting")
         self.command_handler = CommandHandler()
         self.load_environment()
-        LoggingConfig()
+        self.load_plugins()
         self.logger.info("Application initialized")
+        self.run_repl()
 
     def load_environment(self):
+        """Load environment variables from .env file."""
         try:
             load_dotenv()
             self.settings = dict(os.environ)
             environment = self.get_environment_variable()
             self.logger.info("Environment variables loaded successfully")
-            self.logger.debug(f"Current environment: {environment}")
-        except Exception as e:
+            self.logger.debug("Current environment: %s", environment)
+        except Exception:
             self.logger.critical("Failed to load environment variables", exc_info=True)
             raise
 
     def get_environment_variable(self, env_var: str = 'ENVIRONMENT'):
+        """
+        Retrieve and validate environment variable.
+        
+        Args:
+            env_var: Name of the environment variable to retrieve
+            
+        Returns:
+            Value of the environment variable or empty string if not found
+        """
         value = self.settings.get(env_var, None)
         if not value:
-            self.logger.warning(f"Environment variable {env_var} not set")
+            self.logger.warning("Environment variable %s not set", env_var)
         return value
 
     def load_plugins(self):
+        """Discover and register plugin commands from plugins directory."""
         plugins_package = 'app.plugins'
-        plugins_path = plugins_package.replace('.', '/')
-        
         self.logger.info("Starting plugin loading process")
-        
-        if not os.path.exists(plugins_path):
-            self.logger.error(f"Plugin directory {plugins_path} not found")
+        if not self._plugins_directory_exists(plugins_package):
             return
 
-        for _, plugin_name, is_pkg in pkgutil.iter_modules([plugins_package.replace('.', '/')]):
-            if is_pkg:
-                try:
-                    plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
-                    self.logger.debug(f"Discovered plugin: {plugin_name}")
+        for module_info in pkgutil.iter_modules([plugins_package.replace('.', '/')]):
+            if not module_info.ispkg:
+                continue
+            self._process_plugin_module(plugins_package, module_info.name)
 
-                    for item_name in dir(plugin_module):
-                        item = getattr(plugin_module, item_name)
-                        try:
-                            if issubclass(item, Command) and item != Command:
-                                if item_name == 'MenuCommand':
-                                    self.command_handler.register_command(plugin_name, item(self.command_handler))
-                                else:
-                                    self.command_handler.register_command(plugin_name, item())
-                                self.logger.info(f"Registered command: {plugin_name}")
-                        except TypeError:
-                            continue
-                except Exception as e:
-                    self.logger.error(f"Error loading plugin {plugin_name}: {str(e)}", exc_info=True)
-                    continue
+    def _plugins_directory_exists(self, plugins_package: str) -> bool:
+        plugins_path = plugins_package.replace('.', '/')
+        if not os.path.exists(plugins_path):
+            self.logger.error("Plugin directory %s not found", plugins_path)
+            return False
+        return True
+
+    def _process_plugin_module(self, plugins_package: str, plugin_name: str):
+        try:
+            plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
+            self._register_commands_from_module(plugin_module, plugin_name)
+        except Exception as error: # pylint: disable=broad-except
+            self.logger.error("Error loading plugin %s: %s", plugin_name, str(error), exc_info=True)
+
+    def _register_commands_from_module(self, plugin_module, plugin_name: str):
+        for item_name in dir(plugin_module):
+            item = getattr(plugin_module, item_name)
+            if not isinstance(item, type) or not issubclass(item, Command) or item == Command:
+                continue
+            command_instance = item() if item_name != 'MenuCommand' else item(self.command_handler)
+            self.command_handler.register_command(plugin_name, command_instance)
+            self.logger.info("Registered command: %s", plugin_name)
 
     def run_repl(self):
+        """Run Read-Eval-Print Loop (REPL) interface for user interaction."""
         self.logger.info("Starting REPL interface")
-        print("Welcome to Calculator (Press Ctrl+C to exit)")
+        print("Welcome to Calculator")
 
         try:
             while True:
                 try:
                     user_input = input(">>> ").strip()
-                    self.logger.debug(f"User input: {user_input}")
+                    self.logger.debug("User input: %s", user_input)
 
-                    if user_input.lower() == 'exit':
-                        self.command_handler.execute_command('exit')
+                    if user_input.lower() == "exit":
+                        self.command_handler.execute_command("exit")
                         self.logger.info("Exit command received")
                         break
 
-                    parts = user_input.split()
-                    command_name = parts[0]
-                    args = parts[1:]
-
-                    if command_name in self.command_handler.commands:
-                        command = self.command_handler.commands[command_name]
-                        self.logger.info(f"Executing command: {command_name} with args: {args}")
-
-                        try:
-                            if args:
-                                command.execute(*args)
-                            else:
-                                command.execute()
-                        except Exception as e:
-                            self.logger.error(f"Command execution error: {str(e)}", exc_info=True)
-                            print(f"Error: {str(e)}")
-                    else:
-                        self.logger.warning(f"Unknown command attempted: {command_name}")
-                        print(f"No such command: {command_name}")
-                        
+                    self._execute_command(user_input)
                 except KeyboardInterrupt:
                     self.logger.info("Keyboard interrupt detected")
                     print("\nExiting...")
                     break
-
-        except Exception as e:
+        except Exception:
             self.logger.critical("REPL session failed", exc_info=True)
             raise
 
-    def start(self):
-        self.logger.info("Application starting")
-        try:
-            self.load_plugins()
-            self.run_repl()
-        except Exception as e:
-            self.logger.critical("Application failed to start", exc_info=True)
-            raise
-        finally:
-            self.logger.info("Application shutdown")
+    def _execute_command(self, user_input: str):
+        """Parses and executes user commands from REPL input."""
+        parts = user_input.split()
+        if not parts:
+            return
+
+        command_name, args = parts[0], parts[1:]
+
+        if command_name in self.command_handler.commands:
+            command = self.command_handler.commands[command_name]
+            self.logger.info("Executing command: %s with args: %s", command_name, args)
+            try:
+                command.execute(*args) if args else command.execute()
+            except Exception as e:  # pylint: disable=broad-except
+                self.logger.error("Command execution error: %s", str(e), exc_info=True)
+                print(f"Error: {str(e)}")
+        else:
+            self.logger.warning("Unknown command attempted: %s", command_name)
+            print(f"No such command: {command_name}")
+        

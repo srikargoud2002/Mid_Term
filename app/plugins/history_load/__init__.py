@@ -1,13 +1,21 @@
+"""
+History loading command module for calculator application.
+Provides interactive CSV history file selection and loading capabilities.
+"""
 from app.commands import Command
 from app.plugins.history_facade import HistoryFacade
-from pathlib import Path
 
-class HistoryLoadCommand(Command):
-    def execute(self, *args):
+class HistoryLoadCommand(Command):# pylint: disable=too-few-public-methods
+    """Implements interactive history loading through command pattern.
+    
+    Handles CSV file discovery, user selection, and error handling for
+    historical data loading operations.
+    """
+    def execute(self):
+        """Execute interactive history loading workflow."""
         try:
             # List available CSV files
             csv_files = HistoryFacade.list_csv_files()
-            
             if not csv_files:
                 print("No history files found in current directory.")
                 return
@@ -34,5 +42,5 @@ class HistoryLoadCommand(Command):
             result = HistoryFacade.load_from_csv(selected_file)
             print(f"\n{result}")
 
-        except Exception as e:
-            print(f"\nError loading history: {str(e)}")
+        except (FileNotFoundError, PermissionError, ValueError) as e:
+            print(f"File operation failed: {str(e)}")
