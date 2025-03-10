@@ -4,14 +4,6 @@
 
 This midterm assignment involves creating a  Python-based calculator application. The project emphasizes software engineering best practices, including writing maintainable code, implementing appropriate design patterns, incorporating comprehensive logging systems, utilizing environment variables for dynamic configuration, leveraging Pandas for data operations, and developing an interactive command-line interface (REPL) for user interaction.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Design Patterns](#design-patterns)
-- [Logging](#logging)
-- [Contributing](#contributing)
-
 ## Prerequisites
 
 - Python
