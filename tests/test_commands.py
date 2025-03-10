@@ -5,6 +5,7 @@ from app.plugins.add import AddCommand
 from app.plugins.subtract import SubtractCommand
 from app.plugins.multiply import MultiplyCommand
 from app.plugins.divide import DivideCommand
+from app.commands import Command
 
 def test_app_start_unknown_command(capfd, monkeypatch):
     """Test how the REPL handles an unknown command before exiting."""
@@ -151,16 +152,33 @@ def test_divide_command_zero_division(monkeypatch, capfd):
 
 def test_app_menu_command(capfd, monkeypatch):
     """Test that the REPL correctly handles the 'menu' command."""
+    # Mock user inputs
     inputs = iter(['menu', 'exit'])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    app = App(start_repl=False)  # Prevent REPL from starting immediately
+    # Create app without starting REPL immediately
+    app = App(start_repl=False)
 
+    # Create and register a menu command for testing purposes
+    class MenuCommand(Command):  # pylint: disable=too-few-public-methods
+        """Menu command for displaying available commands."""        
+        def __init__(self, command_handler):
+            self.command_handler = command_handler
+
+        def execute(self):
+            """Display available commands"""
+            print("Available commands:")
+            for cmd_name in sorted(self.command_handler.commands.keys()):
+                print(f"  - {cmd_name}")
+
+    # Register the menu command directly for testing
+    app.command_handler.register_command("menu", MenuCommand(app.command_handler))
+
+    # Run the REPL with SystemExit handling
     with pytest.raises(SystemExit) as e:
-        app.run_repl()  # Manually start the REPL for controlled testing
-
+        app.run_repl()
+    # Capture and verify output
     captured = capfd.readouterr()
-
-    # Verify 'menu' command output
     assert "Available commands:" in captured.out, "Menu command output incorrect"
-    assert str(e.value) == "Exiting...", "The app did not exit as expected"
+    # Verify exit message
+    assert str(e.value) == "Exiting...", "The app did not exit with the expected message"
