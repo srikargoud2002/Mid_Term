@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 from app.commands import Command, CommandHandler
 import logging
 import logging.config
-import sys
 class App:
     """Main application class handling initialization, 
         plugin loading, and REPL execution."""
@@ -146,16 +145,13 @@ class App:
             return
 
         command_name, args = parts[0], parts[1:]
-
+        ## LBYL
         if command_name in self.command_handler.commands:
             command = self.command_handler.commands[command_name]
-            self.logger.info("Executing command: %s with args: %s", command_name, args)
-            try:
+            if callable(command.execute):
                 command.execute(*args) if args else command.execute()
-            except Exception as e:  # pylint: disable=broad-except
-                self.logger.error("Command execution error: %s", str(e), exc_info=True)
-                print(f"Error: {str(e)}")
+            else:
+                print("Command is not executable")
         else:
-            self.logger.warning("Unknown command attempted: %s", command_name)
             print(f"No such command: {command_name}")
         

@@ -1,3 +1,4 @@
+"""Tests For Basic Commands"""
 import pytest
 from app import App
 from app.plugins.add import AddCommand
@@ -22,7 +23,8 @@ def test_app_start_unknown_command(capfd, monkeypatch):
 def test_add_command_valid_input(monkeypatch, capfd):
     """Test AddCommand with valid input."""
     # Simulate user input for valid numbers
-    monkeypatch.setattr('builtins.input', lambda _: '10 20')  # Example: '10' and '20' are the inputs
+    monkeypatch.setattr(
+        'builtins.input', lambda _: '10 20')  # Example: '10' and '20' are the inputs
 
     add_command = AddCommand()
     add_command.execute('10', '20')  # Simulate adding 10 and 20

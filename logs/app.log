@@ -84,3 +84,82 @@ ValueError: Cannot divide by zero
 2025-03-07 15:30:08,111 - app - INFO - Application initialized
 2025-03-07 15:30:08,111 - app - INFO - Starting REPL interface
 2025-03-07 15:30:09,983 - app - INFO - Keyboard interrupt detected
+2025-03-08 18:59:16,732 - setup_test - INFO - Logging configured successfully with level DEBUG  # INFO, WARNING, ERROR, CRITICAL at ./logs/app.log
+2025-03-08 18:59:16,733 - app - INFO - Application is Starting
+2025-03-08 18:59:16,733 - app - INFO - Starting plugin loading process
+2025-03-08 18:59:16,741 - app - INFO - Registered command: add
+2025-03-08 18:59:16,742 - app - INFO - Registered command: divide
+2025-03-08 18:59:16,742 - app - INFO - Registered command: exit
+2025-03-08 18:59:16,992 - app - INFO - Registered command: history_clear
+2025-03-08 18:59:16,992 - app - INFO - Registered command: history_load
+2025-03-08 18:59:16,993 - app - INFO - Registered command: history_save
+2025-03-08 18:59:16,993 - app - INFO - Registered command: history_show
+2025-03-08 18:59:16,994 - app - INFO - Registered command: last_op
+2025-03-08 18:59:16,994 - app - INFO - Registered command: menu
+2025-03-08 18:59:16,995 - app - INFO - Registered command: multiply
+2025-03-08 18:59:16,995 - app - INFO - Registered command: subtract
+2025-03-08 18:59:16,995 - app - INFO - Application initialized
+2025-03-08 18:59:16,996 - app - INFO - Starting REPL interface
+2025-03-08 18:59:30,049 - app - INFO - Executing command: add with args: ['3', '4']
+2025-03-08 18:59:35,122 - app - INFO - Executing command: add with args: ['2', '4']
+2025-03-08 18:59:38,565 - app - INFO - Executing command: add with args: ['2', '4']
+2025-03-08 18:59:45,327 - app - INFO - Executing command: subtract with args: ['2', '3']
+2025-03-08 19:00:13,285 - app - WARNING - Unknown command attempted: history_show()
+2025-03-08 19:00:31,194 - app - INFO - Executing command: history_show with args: []
+2025-03-08 19:00:57,646 - app - INFO - Executing command: history_show with args: []
+2025-03-08 19:01:06,298 - app - INFO - Executing command: history_save with args: []
+2025-03-08 19:01:06,299 - app.plugins.history_facade - INFO - Created history directory at C:\GitHub\Mid_Term\calculator_history
+2025-03-08 19:01:06,299 - app.plugins.history_facade - INFO - Saving 4 records to calculator_history\calculator_history_20250308_190106.csv
+2025-03-08 19:01:24,173 - app - INFO - Exit command received
+2025-03-09 17:57:20,505 - setup_test - INFO - Logging configured successfully with level DEBUG  # INFO, WARNING, ERROR, CRITICAL at ./logs/app.log
+2025-03-09 17:57:20,505 - app - INFO - Application is Starting
+2025-03-09 17:57:20,505 - app - INFO - Starting plugin loading process
+2025-03-09 17:57:20,512 - app - INFO - Registered command: add
+2025-03-09 17:57:20,513 - app - INFO - Registered command: divide
+2025-03-09 17:57:20,513 - app - INFO - Registered command: exit
+2025-03-09 17:57:20,791 - app - INFO - Registered command: history_clear
+2025-03-09 17:57:20,791 - app - INFO - Registered command: history_load
+2025-03-09 17:57:20,792 - app - INFO - Registered command: history_save
+2025-03-09 17:57:20,793 - app - INFO - Registered command: history_show
+2025-03-09 17:57:20,793 - app - INFO - Registered command: last_op
+2025-03-09 17:57:20,794 - app - INFO - Registered command: menu
+2025-03-09 17:57:20,795 - app - INFO - Registered command: multiply
+2025-03-09 17:57:20,795 - app - INFO - Registered command: subtract
+2025-03-09 17:57:20,795 - app - INFO - Application initialized
+2025-03-09 17:57:20,796 - app - INFO - Starting REPL interface
+2025-03-09 17:57:22,935 - app - INFO - Executing command: menu with args: []
+2025-03-09 18:47:43,983 - app - INFO - Exit command received
+2025-03-09 19:52:59,362 - setup_test - INFO - Logging configured successfully with level DEBUG  # INFO, WARNING, ERROR, CRITICAL at ./logs/app.log
+2025-03-09 19:52:59,362 - app - INFO - Application is Starting
+2025-03-09 19:52:59,363 - app - INFO - Starting plugin loading process
+2025-03-09 19:52:59,372 - app - INFO - Registered command: add
+2025-03-09 19:52:59,373 - app - INFO - Registered command: divide
+2025-03-09 19:52:59,374 - app - INFO - Registered command: exit
+2025-03-09 19:52:59,670 - app - INFO - Registered command: history_clear
+2025-03-09 19:52:59,671 - app - INFO - Registered command: history_load
+2025-03-09 19:52:59,671 - app - INFO - Registered command: history_save
+2025-03-09 19:52:59,672 - app - INFO - Registered command: history_show
+2025-03-09 19:52:59,672 - app - INFO - Registered command: last_op
+2025-03-09 19:52:59,673 - app - INFO - Registered command: menu
+2025-03-09 19:52:59,673 - app - INFO - Registered command: multiply
+2025-03-09 19:52:59,674 - app - INFO - Registered command: subtract
+2025-03-09 19:52:59,674 - app - INFO - Application initialized
+2025-03-09 19:52:59,674 - app - INFO - Starting REPL interface
+2025-03-09 19:53:15,977 - app - INFO - Exit command received
+2025-03-09 19:56:58,439 - setup_test - INFO - Logging configured successfully with level DEBUG  # INFO, WARNING, ERROR, CRITICAL at ./logs/app.log
+2025-03-09 19:56:58,439 - app - INFO - Application is Starting
+2025-03-09 19:56:58,440 - app - INFO - Starting plugin loading process
+2025-03-09 19:56:58,447 - app - INFO - Registered command: add
+2025-03-09 19:56:58,447 - app - INFO - Registered command: divide
+2025-03-09 19:56:58,448 - app - INFO - Registered command: exit
+2025-03-09 19:56:58,702 - app - INFO - Registered command: history_clear
+2025-03-09 19:56:58,703 - app - INFO - Registered command: history_load
+2025-03-09 19:56:58,703 - app - INFO - Registered command: history_save
+2025-03-09 19:56:58,704 - app - INFO - Registered command: history_show
+2025-03-09 19:56:58,704 - app - INFO - Registered command: last_op
+2025-03-09 19:56:58,705 - app - INFO - Registered command: menu
+2025-03-09 19:56:58,705 - app - INFO - Registered command: multiply
+2025-03-09 19:56:58,706 - app - INFO - Registered command: subtract
+2025-03-09 19:56:58,706 - app - INFO - Application initialized
+2025-03-09 19:56:58,706 - app - INFO - Starting REPL interface
+2025-03-09 20:05:37,972 - app - INFO - Exit command received
