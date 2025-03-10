@@ -28,10 +28,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Test with pytest --pylint
+    - name: Test with pytest
       run: |
         pytest
-        - name: Test with pytest and coverage
-        run: |
-          pip install pytest-cov
-          pytest --cov=./ --cov-report=xml --junitxml=junit/test-results.xml
+    - name: Test with pytest and coverage
+      run: |
+        pip install pytest-cov
+        pytest --cov=./ --cov-report=xml --junitxml=junit/test-results.xml
