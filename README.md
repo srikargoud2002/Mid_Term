@@ -81,8 +81,11 @@ The calculator application uses a comprehensive logging system to record detaile
 Environment variables are used to set logging levels dynamically, output path of the logs, history saving path and the Environment.
 
 LOG_LEVEL=DEBUG  # INFO, WARNING, ERROR, CRITICAL
+
 LOG_OUTPUT=./logs/app.log
+
 HISTORY_PATH=./calculator_history
+
 ENVIRONMENT= DEVELOPMENT
 
 ## Testing & Coverage
