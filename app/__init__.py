@@ -139,19 +139,20 @@ class App:
             raise
 
     def _execute_command(self, user_input: str):
-        """Parses and executes user commands from REPL input."""
         parts = user_input.split()
         if not parts:
             return
 
         command_name, args = parts[0], parts[1:]
-        ## LBYL
         if command_name in self.command_handler.commands:
             command = self.command_handler.commands[command_name]
             if callable(command.execute):
-                command.execute(*args) if args else command.execute()
+                try:
+                    command.execute(*args) if args else command.execute()
+                except TypeError as e:
+                    print(f"Error: {e}")
             else:
                 print("Command is not executable")
         else:
             print(f"No such command: {command_name}")
-        
+            
